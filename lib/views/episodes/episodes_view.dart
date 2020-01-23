@@ -15,26 +15,28 @@ class EpisodesView extends StatelessWidget {
     return ViewModelProvider.withConsumer(
       viewModel: EpisodesViewModel(),
       builder: (context, [model, child]) => SingleChildScrollView(
-          child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        mainAxisSize: MainAxisSize.max,
-        children: <Widget>[
-          SizedBox(
-            height: 100,
-          ),
-          SeasonDetails(
-            details: SeasonDetailsModel(
-              title: 'SEASON 1',
-              description:
-                  'This season covers the absolute basics of Flutter Web Dev to get us up and running with a basic web app.',
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.max,
+          children: <Widget>[
+            SizedBox(
+              height: 100,
             ),
-          ),
-          SizedBox(
-            height: 50,
-          ),
-          EpisodesList(episodes: model.episodes),
-        ],
-      )),
+            SeasonDetails(
+              details: SeasonDetailsModel(
+                title: 'SEASON 1',
+                description:
+                    'This season covers the absolute basics of Flutter Web Dev to get us up and running with a basic web app.',
+              ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            EpisodesList(episodes: model.episodes),
+          ],
+        ),
+      ),
+      onModelReady: (model) => model.getEpisodes(),
     );
   }
 }
