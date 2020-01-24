@@ -31,7 +31,7 @@ class NavBarItem extends StatelessWidget {
           ),
           mobile: NavBarItemMobile(
           ),
-        ).showCursorOnHover.moveUpOnHover,
+        ).showCursorOnHover,
       ),
     );
   }
