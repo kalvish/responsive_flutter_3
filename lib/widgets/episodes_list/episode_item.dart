@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:the_basics/datamodels/episode_item_model.dart';
+import 'package:the_basics/extensions/hover_extensions.dart';
 
 class EpisodeItem extends StatelessWidget {
   final EpisodeItemModel model;
@@ -20,7 +21,10 @@ class EpisodeItem extends StatelessWidget {
           children: <Widget>[
             SizedBox(
               height: 180,
-              child: Image.network(model.imageUrl, fit: BoxFit.cover,),
+              child: Image.network(
+                model.imageUrl,
+                fit: BoxFit.cover,
+              ),
             ),
             Padding(
               padding: const EdgeInsets.symmetric(
@@ -48,6 +52,6 @@ class EpisodeItem extends StatelessWidget {
           ],
         ),
       ),
-    );
+    ).showCursorOnHover.moveUpOnHover;
   }
 }

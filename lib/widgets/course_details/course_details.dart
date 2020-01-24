@@ -24,7 +24,7 @@ class CourseDetails extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         children: <Widget>[
           Text(
-            'FLUTTER WEB.\nTHE BASICS',
+            'TEST WEB.\nTHE BASICS',
             style: titleTextStyle(sizingInformation.deviceScreenType),
             textAlign: textAlignment,
           ),

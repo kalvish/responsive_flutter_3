@@ -1,6 +1,7 @@
 import 'dart:js';
 
 import 'package:flutter/material.dart';
+import 'package:modal_progress_hud/modal_progress_hud.dart';
 import 'package:the_basics/datamodels/episode_item_model.dart';
 import 'package:the_basics/datamodels/season_details_model.dart';
 import 'package:the_basics/provider_architecture/provider_architecture.dart';
@@ -32,7 +33,10 @@ class EpisodesView extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            EpisodesList(episodes: model.episodes),
+            if (model.busy)
+              CircularProgressIndicator()
+            else
+              EpisodesList(episodes: model.episodes),
           ],
         ),
       ),
