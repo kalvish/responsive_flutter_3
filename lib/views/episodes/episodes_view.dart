@@ -33,10 +33,9 @@ class EpisodesView extends StatelessWidget {
             SizedBox(
               height: 50,
             ),
-            if (model.busy)
-              CircularProgressIndicator()
-            else
-              EpisodesList(episodes: model.episodes),
+             model.episodes == null
+              ? CircularProgressIndicator()
+              : EpisodesList(episodes: model.episodes),
           ],
         ),
       ),
